@@ -55,7 +55,7 @@ class InteractiveRecord
 
   def self.find_by(attribute)
     binding.pry
-    #sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.each {|key,value| (key.to_s + ' = ' + value) }}"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.first[0].to_s} = '#{attribute.first[1]}'"
     DB[:conn].execute(sql)
 
   end
