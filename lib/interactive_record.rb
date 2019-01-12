@@ -54,8 +54,8 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
+    binding.pry
     #sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.each {|key,value| (key.to_s + ' = ' + value) }}"
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.each {|key,value| key.to_s}} = '#{attribute.each {|key,value| value }}'"
     DB[:conn].execute(sql)
 
   end
