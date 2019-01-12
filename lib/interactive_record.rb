@@ -54,7 +54,7 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.each {|key,value|"#{key}"}} = '#{attribute.each {|key,value| value}'"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.each {|key,value|key.to_s} = '#{attribute.each {|key,value| value}'"
 
   end
 
